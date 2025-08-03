@@ -104,3 +104,9 @@ jspm_packages/
 # Temporary folders
 tmp/
 temp/
+
+# Vercel
+.vercel
+
+# Local environment file (should not be committed)
+.env.production.local

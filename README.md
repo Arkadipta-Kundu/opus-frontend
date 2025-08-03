@@ -93,4 +93,22 @@ npm run build
 ```
 
 This creates an optimized production build in the `build` folder.
+
+## 🚀 Deploy to Vercel
+
+This app is ready for deployment on Vercel! See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
+
+**Quick Deploy:**
+
+1. Install Vercel CLI: `npm i -g vercel`
+2. Login: `vercel login`
+3. Deploy: `vercel --prod`
+4. Set environment variable `REACT_APP_API_BASE_URL` in Vercel dashboard
+
+## Environment Variables
+
+For production deployment, set:
+
+- `REACT_APP_API_BASE_URL`: Your Spring Boot backend URL
+
 # opus-frontend
