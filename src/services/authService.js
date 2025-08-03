@@ -2,12 +2,16 @@ import axios from 'axios';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080';
 
+console.log('API Base URL:', API_BASE_URL); // Debug log
+
 // Create axios instance with default config
 const api = axios.create({
     baseURL: API_BASE_URL,
     headers: {
         'Content-Type': 'application/json',
     },
+    withCredentials: false, // Important for CORS
+    timeout: 10000, // 10 second timeout
 });
 
 // Add request interceptor to include basic auth credentials
@@ -46,6 +50,15 @@ api.interceptors.request.use(
 api.interceptors.response.use(
     (response) => response,
     (error) => {
+        // Log errors for debugging
+        console.error('API Error:', {
+            url: error.config?.url,
+            method: error.config?.method,
+            status: error.response?.status,
+            message: error.message,
+            data: error.response?.data
+        });
+
         if (error.response?.status === 401) {
             // Clear stored credentials on auth failure
             localStorage.removeItem('userName');

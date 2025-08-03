@@ -108,5 +108,11 @@ temp/
 # Vercel
 .vercel
 
+# Netlify
+.netlify
+# Local Netlify folder
+netlify/functions-serve
+
 # Local environment file (should not be committed)
 .env.production.local
+.env.netlify

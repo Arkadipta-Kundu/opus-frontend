@@ -94,9 +94,24 @@ npm run build
 
 This creates an optimized production build in the `build` folder.
 
-## 🚀 Deploy to Vercel
+## 🚀 Deploy to Netlify or Vercel
 
-This app is ready for deployment on Vercel! See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
+This app is ready for deployment on both platforms!
+
+### Netlify (Recommended)
+
+See [NETLIFY_DEPLOYMENT.md](./NETLIFY_DEPLOYMENT.md) for detailed instructions.
+
+**Quick Deploy:**
+
+1. Push to GitHub: `git push origin main`
+2. Connect GitHub repo to Netlify
+3. Set environment variable `REACT_APP_API_BASE_URL` in Netlify dashboard
+4. Deploy automatically!
+
+### Vercel
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
 
 **Quick Deploy:**
 
@@ -104,6 +119,12 @@ This app is ready for deployment on Vercel! See [DEPLOYMENT.md](./DEPLOYMENT.md)
 2. Login: `vercel login`
 3. Deploy: `vercel --prod`
 4. Set environment variable `REACT_APP_API_BASE_URL` in Vercel dashboard
+
+## ⚠️ Important: Backend CORS Setup
+
+**Your Spring Boot backend must allow requests from your deployed domain!**
+
+See [CORS_SETUP.md](./CORS_SETUP.md) for detailed backend configuration.
 
 ## Environment Variables
 
